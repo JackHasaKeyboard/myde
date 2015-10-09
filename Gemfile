@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'paperclip', '~> 4.3.1'
 gem 'haml', '~> 4.0.7'
+gem 'simple_form', '~> 3.2.0'
+gem 'better_errors', '~> 2.1.1'
+# gem 'zeroclipboard-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

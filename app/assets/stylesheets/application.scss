@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro); */
+
+ * {
+ 	font-family: Source Code Pro;
+ }
+
+ body {
+ 	margin: 0;
+ }
+
+ a {
+ 	text-decoration: none;
+ }
+
+ li {
+ 	list-style: none;
+ }
+
+ #header {
+ 	display: inline-block;
+ 	width: 100%;
+ 	-webkit-user-select: none;
+ 	-khtml-user-select: none;
+ 	-moz-user-select: none;
+ 	-o-user-select: none;
+ 	user-select: none;
+
+ 	* {
+ 		display: inline-block;
+ 		padding: 5px;
+ 	}
+
+ 	#upload, h3 {
+ 		margin: 10px;
+ 	}
+
+ 	h3 {
+ 		padding: 12px;
+ 	}
+
+ }
+
+ .win {
+ 	display: inline-block;
+ 	background-color: #073642;
+ 	border-radius: 6px;
+
+ 	.head {
+ 		background-color: #2F2F2F;
+ 		border-radius: 6px 6px 0px 0px;
+
+ 		img, a {
+ 			float: right;
+ 			cursor: pointer;
+ 		}
+ 	}
+
+ 	img {
+ 		height: 20px;
+ 		padding: 10px;
+ 	}
+
+ 	span, li {
+ 		display: inline-block;
+ 		padding: 10px;
+ 		margin: 0;
+ 		color: #f92672
+ 	}
+
+ 	span {
+ 		padding-right: 26px;
+ 		padding-left: 26px;
+ 	}
+
+ 	.line {
+ 		padding-left: 0px;
+ 		padding-right: 0px;
+ 	}
+
+ 	#name {
+ 		display: inline-block;
+ 		border-radius: 6px 0px 0px 0px;
+ 		color: #fff;
+ 		height: 20px;
+ 	}
+
+ 	a {
+ 		display: inline-block;
+ 		color: #fff;
+ 		padding: 10px;
+ 		border-radius: 0px 6px 0px 0px;
+ 	}
+
+ 	.head, span {
+ 		-webkit-user-select: none;
+ 		-khtml-user-select: none;
+ 		-moz-user-select: none;
+ 		-o-user-select: none;
+ 		user-select: none;
+ 	}
+ }
+
+ input[type="submit"] {
+ 	border-radius: 6px;
+ 	background-color: #2F2F2F;
+ 	color: #fff;
+ 	border: 0;
+ }
+
+ .win, input {
+ 	margin: 16px;
+ }
+
+ #upload {
+ 	display: inline-block;
+ 	background-color: #2F2F2F;
+ 	border-radius: 6px;
+ 	float: right;
+
+ 	label {
+ 		display: inline-block;
+ 		color: #fff;
+ 		cursor: pointer;
+ 	}
+
+ 	/* input {
+ 		display: none;
+ 	} */
+
+ 	#submit {
+ 		-webkit-user-select: none;
+ 		-khtml-user-select: none;
+ 		-moz-user-select: none;
+ 		-o-user-select: none;
+ 		user-select: none;
+ 	}
+ }
