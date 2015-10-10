@@ -6,7 +6,7 @@
 - @colors.each do |c|
 	.win{:id => c.file}
 		.head
-			%li#name= c.file
+			%li#name= c.file_file_name
 			%a{:href => "file"} &#8595
 			= image_tag "icon/git.svg", :id => "git_clone"
 
