@@ -14,7 +14,7 @@
  *= require_self
  */
 
- /* @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro); */
+ @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
  * {
  	font-family: Source Code Pro;
@@ -128,10 +128,10 @@
  }
 
  #upload {
- 	display: inline-block;
+ 	/* display: inline-block;
  	background-color: #2F2F2F;
  	border-radius: 6px;
- 	float: right;
+ 	float: right; */
 
  	label {
  		display: inline-block;

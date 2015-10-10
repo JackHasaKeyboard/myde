@@ -3,6 +3,7 @@ class ColorsController < ApplicationController
 
 	def index
 		@colors = Color.all.order("created_at DESC")
+		@code = Code.first
 	end
 
 	def show
