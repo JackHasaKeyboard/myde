@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: d7etvdmoeph11u
-  username: obuzyqafrnnivd
-  password: xvBBFmNlg-IdDq_WIp2cr4VaOD
+  database: dfj1cpd8l46e8g
+  username: okcddhixelzrja
+  password: po5JuNBe5twG0SK75H05SClGHM
