@@ -1,5 +1,0 @@
-require 'active_support'
-
-  module VimColors
-    class RubyExample
-      CONSTANT = /^[0-9]+ regex awesomes$/
