@@ -64,6 +64,7 @@
  	display: inline-block;
  	background-color: #073642;
  	border-radius: 6px;
+ 	float: left; /* fixes additional margin bug */
 
  	.head {
  		background-color: #2F2F2F;
@@ -135,10 +136,10 @@
  }
 
  #upload {
- 	/* display: inline-block;
+ 	display: inline-block;
  	background-color: #2F2F2F;
  	border-radius: 6px;
- 	float: right; */
+ 	float: right;
 
  	label {
  		display: inline-block;
@@ -146,9 +147,9 @@
  		cursor: pointer;
  	}
 
- 	/* input {
+ 	input {
  		display: none;
- 		} */
+ 		}
 
  		#submit {
  			-webkit-user-select: none;

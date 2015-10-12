@@ -2,6 +2,6 @@
 	= simple_form_for @color do |f|
 		= f.input :file
 		= f.submit
-		//= label_tag(:file, "upload color scheme", :id => "l-file")
-		//= label_tag(:submit, raw("&#8593"), :id => "l-submit")
-		//%label#l-err &#10005;
+		= label_tag(:file, "upload color scheme", :id => "l-file")
+		= label_tag(:submit, raw("&#8593"), :id => "l-submit")
+		%label#l-err &#10005;

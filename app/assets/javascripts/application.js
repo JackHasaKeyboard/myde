@@ -15,26 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
-/* $(document).ready(function(){
+$(document).ready(function(){
 	$('#l-submit, #l-err').hide();
 
 	$('#file').change(function(e){
-      var file = $(this).val();
+    var file = $(this).val();
 
-      if(file != "" && file != null) {
-          var ext = file.split('.').pop();
-          
-          if(ext == "tmTheme") {
-               $('#l-submit').show();
-               $('#l-err').hide();
-          } else {
-          	   $('#l-err').show();
-          	   $('#l-submit').hide();
-          }
-      }
+    if(file != "" && file != null) {
+      var ext = file.split('.').pop();
+      
+      if(ext == "tmTheme") {
+       $('#l-submit').show();
+       $('#l-err').hide();
+     } else {
+      $('#l-err').show();
+      $('#l-submit').hide();
+    }
+  }
 });
 
-}); */
+});
 
 var client = new ZeroClipboard( document.getElementById("git_clone") );
 
@@ -46,5 +46,5 @@ client.on( "ready", function( readyEvent ) {
     // `event.target` === the element that was clicked
     event.target.style.display = "none";
     alert("Copied text to clipboard: " + event.data["text/plain"] );
-} );
+  } );
 } );
