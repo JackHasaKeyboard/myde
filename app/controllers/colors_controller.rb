@@ -1,5 +1,5 @@
 class ColorsController < ApplicationController
-	before_action :find_color, only: [:show, :edit, :update, :destroy]
+	before_action :find_color, only: [:show, :destroy]
 
 	def index
 		@colors = Color.all.order("created_at DESC")
@@ -23,12 +23,6 @@ class ColorsController < ApplicationController
 		else
 			render 'new'
 		end
-	end
-
-	def edit
-	end
-
-	def update
 	end
 
 	def destroy
