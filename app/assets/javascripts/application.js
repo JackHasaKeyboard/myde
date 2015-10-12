@@ -16,35 +16,13 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$('#l-submit, #l-err').hide();
 
-	$('#file').change(function(e){
-    var file = $(this).val();
-
-    if(file != "" && file != null) {
-      var ext = file.split('.').pop();
-      
-      if(ext == "tmTheme") {
-       $('#l-submit').show();
-       $('#l-err').hide();
-     } else {
-      $('#l-err').show();
-      $('#l-submit').hide();
+  $('#new_color').bind('change keyup', function() {
+    if($(this).validate().checkForm()) {
+      $('#submit').removeClass('button_disabled').attr('disabled', false);
+    } else {
+      $('#submit').addClass('button_disabled').attr('disabled', true);
     }
-  }
-});
+  });
 
 });
-
-var client = new ZeroClipboard( document.getElementById("git_clone") );
-
-client.on( "ready", function( readyEvent ) {
-  // alert( "ZeroClipboard SWF is ready!" );
-
-  client.on( "aftercopy", function( event ) {
-    // `this` === `client`
-    // `event.target` === the element that was clicked
-    event.target.style.display = "none";
-    alert("Copied text to clipboard: " + event.data["text/plain"] );
-  } );
-} );
