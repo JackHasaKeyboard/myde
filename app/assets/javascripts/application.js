@@ -17,6 +17,22 @@
 
 $(document).ready(function(){
 
+  $(":file").filestyle({buttonText: "upload color scheme"});
+
+  /* ZeroClipboard.config( { swfPath: "http://davidwalsh.name/demo/ZeroClipboard.swf" } );
+
+  var client = new ZeroClipboard( document.getElementById("git_clone") );
+
+  alert( "ZeroClipboard SWF is ready!" );
+
+  client.on( "aftercopy", function( event ) {
+    `this` === `client`;
+    `event.target` === client;
+
+    event.target.style.display = "none";
+    alert("Copied text to clipboard: " + event.data["text/plain"] );
+  } ); */
+  
   $('#new_color').bind('change click', function() {
     if($(this).validate().checkForm()) {
       $('#submit').removeClass('button_disabled').attr('disabled', false);
