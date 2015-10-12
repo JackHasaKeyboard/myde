@@ -1,4 +1,4 @@
 #upload
 	= simple_form_for @color do |f|
-		= f.input :file
+		= f.input :file, :style => "display: none"
 		= f.submit(:value => raw("&#8593"), :id => "submit")

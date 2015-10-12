@@ -8,8 +8,7 @@
 		.win{:id => c.file}
 			.head
 				%li#name= c.file_file_name[/[^.]+/].tr('_-', ' ')
-				%a{:href => "file"} &#8595
-				= image_tag "icon/git.svg", :id => "git_clone"
+				= image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
 
 			- @code.cont.each_line do |line|
 				- i += 1
@@ -17,4 +16,9 @@
 					%span= i
 					%li.line= line
 			- i = 0
+
+			.foot
+				%a{:href => "file"} &#8595
+				= image_tag "icon/git.svg", :id => "git_clone", :title => 'Copy "git clone git://github.com/altercation/solarized.git"'
+
 

@@ -17,11 +17,13 @@
 
 $(document).ready(function(){
 
-  $('#new_color').bind('change keyup', function() {
+  $('#new_color').bind('change click', function() {
     if($(this).validate().checkForm()) {
       $('#submit').removeClass('button_disabled').attr('disabled', false);
+      alert("It worked :D");
     } else {
       $('#submit').addClass('button_disabled').attr('disabled', true);
+      alert("Didn't work m8 :l");
     }
   });
 
