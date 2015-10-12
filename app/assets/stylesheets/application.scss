@@ -32,6 +32,10 @@
  	list-style: none;
  }
 
+ .cont {
+ 	padding: 16px;
+ }
+
  #header {
  	display: inline-block;
  	width: 100%;
@@ -144,13 +148,13 @@
 
  	/* input {
  		display: none;
- 	} */
+ 		} */
 
- 	#submit {
- 		-webkit-user-select: none;
- 		-khtml-user-select: none;
- 		-moz-user-select: none;
- 		-o-user-select: none;
- 		user-select: none;
+ 		#submit {
+ 			-webkit-user-select: none;
+ 			-khtml-user-select: none;
+ 			-moz-user-select: none;
+ 			-o-user-select: none;
+ 			user-select: none;
+ 		}
  	}
- }

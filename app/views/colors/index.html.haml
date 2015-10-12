@@ -1,19 +1,20 @@
 #header
-	%h3 myde
+	%h3 MyDE
 	//= render 'form'
 
-- i = 0
-- @colors.each do |c|
-	.win{:id => c.file}
-		.head
-			%li#name= c.file_file_name
-			%a{:href => "file"} &#8595
-			= image_tag "icon/git.svg", :id => "git_clone"
+.cont
+	- i = 0
+	- @colors.each do |c|
+		.win{:id => c.file}
+			.head
+				%li#name= c.file_file_name[/[^.]+/].tr('_-', ' ')
+				%a{:href => "file"} &#8595
+				= image_tag "icon/git.svg", :id => "git_clone"
 
-		- @code.cont.each_line do |line|
-			- i += 1
-			.line
-				%span= i
-				%li.line= line
-		- i = 0
+			- @code.cont.each_line do |line|
+				- i += 1
+				.line
+					%span= i
+					%li.line= line
+			- i = 0
 
