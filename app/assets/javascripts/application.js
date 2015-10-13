@@ -17,23 +17,21 @@
 
 $(document).ready(function(){
 
+  ZeroClipboard.config({ moviePath: 'http://zeroclipboard.org/javascripts/zc/ZeroClipboard_1.3.2.swf',debug: true });
+
+    var client = new ZeroClipboard($('.copy'));
+    
+    client.on('load', function(client) {
+        $('.flash-loaded').text('Flash player loaded at ' + $.now()).fadeIn();
+        client.on('mouseover', function(client, args) {
+            client.setText($(this).text());
+            $('.confirm-copy').text('text copied at ' + $.now()).fadeIn();
+        });
+    });
+
   $(":file").filestyle({buttonText: "upload color scheme"});
-
-  /* ZeroClipboard.config( { swfPath: "http://davidwalsh.name/demo/ZeroClipboard.swf" } );
-
-  var client = new ZeroClipboard( document.getElementById("git_clone") );
-
-  alert( "ZeroClipboard SWF is ready!" );
-
-  client.on( "aftercopy", function( event ) {
-    `this` === `client`;
-    `event.target` === client;
-
-    event.target.style.display = "none";
-    alert("Copied text to clipboard: " + event.data["text/plain"] );
-  } ); */
   
-  $('#new_color').bind('change click', function() {
+  /* $('#new_color').bind('change click', function() {
     if($(this).validate().checkForm()) {
       $('#submit').removeClass('button_disabled').attr('disabled', false);
       alert("It worked :D");
@@ -41,6 +39,6 @@ $(document).ready(function(){
       $('#submit').addClass('button_disabled').attr('disabled', true);
       alert("Didn't work m8 :l");
     }
-  });
+  }); */
 
 });

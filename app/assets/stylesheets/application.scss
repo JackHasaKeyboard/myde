@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+ @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro); 
 
  * {
  	font-family: Source Code Pro;
@@ -49,9 +49,6 @@
  	* {
  		display: inline-block;
  		padding: 5px;
- 	}
-
- 	#upload, h3 {
  		margin: 10px;
  	}
 
@@ -159,7 +156,6 @@
  }
 
  #upload {
- 	display: inline-block;
  	background-color: #2F2F2F;
  	border-radius: 6px;
  	float: right;
