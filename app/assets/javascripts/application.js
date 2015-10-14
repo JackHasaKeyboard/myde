@@ -17,17 +17,21 @@
 
 $(document).ready(function(){
 
+  $('input[type="file"]').change(function(){
+    $('.buttonText').text($(this).val().split('fakepath\\')[1]);
+  });
+
   ZeroClipboard.config({ moviePath: 'http://zeroclipboard.org/javascripts/zc/ZeroClipboard_1.3.2.swf',debug: true });
 
-    var client = new ZeroClipboard($('.copy'));
-    
-    client.on('load', function(client) {
-        $('.flash-loaded').text('Flash player loaded at ' + $.now()).fadeIn();
-        client.on('mouseover', function(client, args) {
-            client.setText($(this).text());
-            $('.confirm-copy').text('text copied at ' + $.now()).fadeIn();
-        });
+  var client = new ZeroClipboard($('.copy'));
+
+  client.on('load', function(client) {
+    $('.flash-loaded').text('Flash player loaded at ' + $.now()).fadeIn();
+    client.on('mouseover', function(client, args) {
+      client.setText($(this).text());
+      $('.confirm-copy').text('text copied at ' + $.now()).fadeIn();
     });
+  });
 
   $(":file").filestyle({buttonText: "upload color scheme"});
   
