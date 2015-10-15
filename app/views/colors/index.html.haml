@@ -1,98 +1,24 @@
-!!!
-%html
-  %head
-    %title Color schemes for text editors
-    %link{"data-turbolinks-track" => "true", :href => "/assets/application.self-bf0f2c9ad46fa1a719da688ea648903a30419932ffb556b62f2a049de3047f53.css?body=1", :media => "all", :rel => "stylesheet"}/
-    %script{"data-turbolinks-track" => "true", :src => "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/bootstrap-filestyle.min.self-9c16f4601f2023ff86bb91c93e7d92f09f18e4ea845adc339ca29f8d2469975e.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/colors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/jquery.validate.self-976d73eacc20880c1ba4c32778dd557b407b91012ffddcc929fc3648f3477d90.js?body=1"}
-    %script{"data-turbolinks-track" => "true", :src => "/assets/application.self-e70da8a1f591c6a3088d3752ae7677c7cc8fd3fd828c26f979cc0933ecf9ad3c.js?body=1"}
-    %meta{:content => "authenticity_token", :name => "csrf-param"}/
-    %meta{:content => "WeqOlFCXHx0lQinshdaR0cXfXYcGlmNQFvkYWDshFO9o1ANl7FZex57xnZm++VCNRvnPv59XOS+Gg16EPDdrOw==", :name => "csrf-token"}/
-  %body
-    #header
-      %h3 MyDE
-      #upload
-        %form#new_color.simple_form.new_color{"accept-charset" => "UTF-8", :action => "/colors", :enctype => "multipart/form-data", :method => "post", :novalidate => "novalidate"}
-          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-          %input{:name => "authenticity_token", :type => "hidden", :value => "WeqOlFCXHx0lQinshdaR0cXfXYcGlmNQFvkYWDshFO9o1ANl7FZex57xnZm++VCNRvnPv59XOS+Gg16EPDdrOw=="}/
-          .input.file.optional.color_file
-            %label.file.optional{:for => "color_file"} File
-            %input#color_file.file.optional{:name => "color[file]", :style => "position: absolute; clip: rect(0px 0px 0px 0px);", :tabindex => "-1", :type => "file"}/
-            .bootstrap-filestyle.input-group
-              %input.form-control{:disabled => "disabled", :placeholder => "", :type => "text"}/
-              %span.group-span-filestyle.input-group-btn{:tabindex => "0"}
-                %label.btn.btn-default{:for => "color_file"}
-                  %span.icon-span-filestyle.glyphicon.glyphicon-folder-open
-                  %span.buttonText upload color scheme
-          %input#submit{:name => "commit", :type => "submit", :value => "↑"}/
-    .cont
-      .win{:id => "/system/colors/files/000/000/063/original/Monokai_Extended_Light.tmTheme?1444876721"}
-        .head
-          %li.name Monokai Extended Light
-          %img#sublimetext_logo{:alt => "Sublimetext logo 4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a", :src => "/assets/icon/sublimetext_logo-4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a.png"}/
-        .line
-          %span 1
-          %li.line require 'active_support'
-        .line
-          %span 2
-          %li.line
-        .line
-          %span 3
-          %li.line module VimColors
-        .line
-          %span 4
-          %li.line class RubyExample
-        .line
-          %span 5
-          %li.line CONSTANT = /^[0-9]+ regex awesomes$/
-        .foot
-          %a{:download => "", :href => "/system/colors/files/000/000/063/original/Monokai_Extended_Light.tmTheme?1444876721"} ↓
-          %img.git_clone{:alt => "Git 0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40", :src => "/assets/icon/git-0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40.svg", :title => "git clone git://github.com/altercation/solarized.git"}/
-      .win{:id => "/system/colors/files/000/000/062/original/Monokai_Extended_Bright.tmTheme?1444876718"}
-        .head
-          %li.name Monokai Extended Bright
-          %img#sublimetext_logo{:alt => "Sublimetext logo 4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a", :src => "/assets/icon/sublimetext_logo-4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a.png"}/
-        .line
-          %span 1
-          %li.line require 'active_support'
-        .line
-          %span 2
-          %li.line
-        .line
-          %span 3
-          %li.line module VimColors
-        .line
-          %span 4
-          %li.line class RubyExample
-        .line
-          %span 5
-          %li.line CONSTANT = /^[0-9]+ regex awesomes$/
-        .foot
-          %a{:download => "", :href => "/system/colors/files/000/000/062/original/Monokai_Extended_Bright.tmTheme?1444876718"} ↓
-          %img.git_clone{:alt => "Git 0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40", :src => "/assets/icon/git-0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40.svg", :title => "git clone git://github.com/altercation/solarized.git"}/
-      .win{:id => "/system/colors/files/000/000/061/original/Monokai_Extended.tmTheme?1444876711"}
-        .head
-          %li.name Monokai Extended
-          %img#sublimetext_logo{:alt => "Sublimetext logo 4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a", :src => "/assets/icon/sublimetext_logo-4834c86dd8c4f493608a31964a491e5d567d0df6c02fcf674b8307b0280cee5a.png"}/
-        .line
-          %span 1
-          %li.line require 'active_support'
-        .line
-          %span 2
-          %li.line
-        .line
-          %span 3
-          %li.line module VimColors
-        .line
-          %span 4
-          %li.line class RubyExample
-        .line
-          %span 5
-          %li.line CONSTANT = /^[0-9]+ regex awesomes$/
-        .foot
-          %a{:download => "", :href => "/system/colors/files/000/000/061/original/Monokai_Extended.tmTheme?1444876711"} ↓
-          %img.git_clone{:alt => "Git 0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40", :src => "/assets/icon/git-0a8bfe9b91c6c2c76b04235b61ac83c043fd1197e9fdc2c823a08735344fdf40.svg", :title => "git clone git://github.com/altercation/solarized.git"}/
+#header
+	%h3 MyDE
+	= render 'form'
+
+.cont
+	- i = 0
+	- @colors.each do |c|
+		.win{:id => c.file}
+			.head
+				%li.name= c.file_file_name[/[^.]+/].tr('_-', ' ')
+				= image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
+
+			- @code.cont.each_line do |line|
+				- i += 1
+				.line
+					%span= i
+					%li.line= line
+			- i = 0
+
+			.foot
+				%a{:href => c.file, :download => true} &#8595
+				= image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/altercation/solarized.git"
+
+
