@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $(":file").filestyle({buttonText: "upload color scheme"});
+  /* $(":file").filestyle({buttonText: "upload color scheme"}); */
 
   $('input[type="file"]').change(function(){
     $('.buttonText').text($(this).val().split('fakepath\\')[1]);
