@@ -16,32 +16,18 @@
 //= require_tree .
 
 $(document).ready(function(){
+  $(":file").filestyle({buttonText: "upload color scheme"});
 
   $('input[type="file"]').change(function(){
     $('.buttonText').text($(this).val().split('fakepath\\')[1]);
   });
 
-  ZeroClipboard.config({ moviePath: 'http://zeroclipboard.org/javascripts/zc/ZeroClipboard_1.3.2.swf',debug: true });
-
-  var client = new ZeroClipboard($('.copy'));
-
-  client.on('load', function(client) {
-    $('.flash-loaded').text('Flash player loaded at ' + $.now()).fadeIn();
-    client.on('mouseover', function(client, args) {
-      client.setText($(this).text());
-      $('.confirm-copy').text('text copied at ' + $.now()).fadeIn();
-    });
-  });
-
-  $(":file").filestyle({buttonText: "upload color scheme"});
-  
   /* $('#new_color').bind('change click', function() {
     if($(this).validate().checkForm()) {
       $('#submit').removeClass('button_disabled').attr('disabled', false);
-      alert("It worked :D");
     } else {
       $('#submit').addClass('button_disabled').attr('disabled', true);
-      alert("Didn't work m8 :l");
+      $('#submit').hide();
     }
   }); */
 

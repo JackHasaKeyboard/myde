@@ -7,7 +7,7 @@
 	- @colors.each do |c|
 		.win{:id => c.file}
 			.head
-				%li#name= c.file_file_name[/[^.]+/].tr('_-', ' ')
+				%li.name= c.file_file_name[/[^.]+/].tr('_-', ' ')
 				= image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
 
 			- @code.cont.each_line do |line|
@@ -18,7 +18,7 @@
 			- i = 0
 
 			.foot
-				%a{:href => "file"} &#8595
-				= image_tag "icon/git.svg", :class => "git_clone", :title => 'Copy "git clone git://github.com/altercation/solarized.git"'
+				%a{:href => c.file, :download => true} &#8595
+				= image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/altercation/solarized.git"
 
 

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro); 
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
  * {
  	font-family: Source Code Pro;
@@ -114,14 +114,19 @@
  	}
 
  	.line {
- 		padding-left: 0px;
+ 		padding-left: 0;
+
+ 		/* span, li {
+ 			padding-top: 2px;
+ 			padding-bottom: 2px;
+ 		} */
 
  		li {
  			white-space: pre-wrap;
  		}
  	}
 
- 	#name {
+ 	.name {
  		display: inline-block;
  		border-radius: 6px 0px 0px 0px;
  		color: #fff;
@@ -170,18 +175,15 @@
  		display: inline-block;
  		color: #fff;
  		cursor: pointer;
+ 		padding: 10px;
  	}
 
  	input[type="text"], label.file, span.icon-span-filestyle {
  		display: none;
  	}
 
- 	label {
- 		margin-left: 10px;
- 	}
-
  	#submit {
- 		padding: 16px;
+ 		padding: 12px;
  	}
 
  	* {
