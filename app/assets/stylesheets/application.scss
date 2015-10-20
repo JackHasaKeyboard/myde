@@ -28,10 +28,6 @@
  	text-decoration: none;
  }
 
- li {
- 	list-style: none;
- }
-
  .cont {
  	padding: 16px;
  	display: inline-block;
@@ -103,19 +99,25 @@
 
  	span, li {
  		display: inline-block;
- 		padding: 10px;
  		margin: 0;
  		color: #f92672
  	}
 
+ 	li {
+ 		padding: 10px;
+ 	}
+
+ 	code {
+ 		padding: 10px;
+ 	}
+
  	span {
- 		padding-right: 26px;
- 		padding-left: 26px;
+ 		/* padding-right: 26px;
+ 		padding-left: 26px; */
  	}
 
  	.line {
- 		padding-left: 0;
-
+ 		padding: 10px;
  		/* span, li {
  			padding-top: 2px;
  			padding-bottom: 2px;
