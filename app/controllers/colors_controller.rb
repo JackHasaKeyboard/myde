@@ -6,13 +6,15 @@ class ColorsController < ApplicationController
 		@code = Code.first
 
 		@color = Color.new
+
+		require 'open-uri'
 	end
 
 	def create
 		@color = Color.new(color_params)
 
 		if @color.save
-			redirect_to index
+			redirect_to #
 		else
 			render 'new'
 		end
