@@ -5,9 +5,14 @@
 .cont
 	- i = 0
 	- @colors.each do |c|
-		.win{:id => c.file}
+		-name = c.file_file_name[/[^.]+/].tr('_-', ' ')
+
+		-doc = Oga.parse_xml(IO.read(c.file.path))
+		-bg = doc.at_xpath('//key[text()="background"]').next_element.text
+
+		.win{:id => name, :style => "background-color: #{bg}"}
 			.head
-				%li.name= c.file_file_name[/[^.]+/].tr('_-', ' ')
+				%li.name= name
 				= image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
 
 			- @code.cont.each_line do |line|
@@ -18,7 +23,5 @@
 			- i = 0
 
 			.foot
-				%a{:href => c.file, :download => true} &#8595
+				%a{:href => c.file, :download => :true} &#8595
 				= image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/altercation/#{c.file_file_name}.git"
-
-
