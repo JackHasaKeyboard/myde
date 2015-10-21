@@ -8,19 +8,38 @@
 		-name = c.file_file_name[/[^.]+/].tr('_-', ' ')
 
 		-doc = Oga.parse_xml(IO.read(c.file.path))
-		-bg = doc.at_xpath('//key[text()="background"]').next_element.text
+		-background = doc.at_xpath('//key[text()="background"]').next_element.text
+		-foreground = doc.at_xpath('//key[text()="foreground"]').next_element.text
 
-		.win{:id => name, :style => "background-color: #{bg}"}
+		- i += 2
+
+		:scss
+			.win:nth-child(#{i}) {
+				background-color: #{background};
+
+				.PreProc {
+					color: #{foreground}
+				}
+				.String {
+					color: #{foreground}
+				} 
+				.LineNr {
+
+				}
+			}
+
+		.win{:id => name}
 			.head
 				%li.name= name
 				= image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
 
+			- l = 0
 			- @code.cont.each_line do |line|
-				- i += 1
+				- l += 1
 				.line
-					%span= i
-					%li.line= line
-			- i = 0
+					%span= l
+					%span= line.html_safe
+			- l = 0
 
 			.foot
 				%a{:href => c.file, :download => :true} &#8595
