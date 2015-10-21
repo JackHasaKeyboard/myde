@@ -2,7 +2,7 @@ class ColorsController < ApplicationController
 	before_action :find_color, only: [:destroy]
 
 	def index
-		@colors = Color.all.order("created_at DESC")
+		@colors = Color.all.order("file_file_name ASC")
 		@code = Code.first
 
 		@color = Color.new
