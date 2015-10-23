@@ -56,10 +56,8 @@
 
  .win {
  	display: inline-block;
- 	background-color: #073642;
  	border-radius: 6px;
  	float: left; /* fixes additional margin bug */
-
 
  	.head, .foot {
  		background-color: #2F2F2F;
@@ -100,7 +98,6 @@
  	span, li {
  		display: inline-block;
  		margin: 0;
- 		color: #f92672
  	}
 
  	li {
@@ -112,8 +109,7 @@
  	}
 
  	span {
- 		/* padding-right: 26px;
- 		padding-left: 26px; */
+ 		white-space: pre;
  	}
 
  	.line {
@@ -142,7 +138,7 @@
  		border-radius: 0px 6px 0px 0px;
  	}
 
- 	.head, span, .foot * {
+ 	.head, .foot *, .lNo {
  		-webkit-user-select: none;
  		-khtml-user-select: none;
  		-moz-user-select: none;
