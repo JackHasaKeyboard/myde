@@ -7,25 +7,34 @@
 	- @colors.each do |c|
 		-name = c.file_file_name[/[^.]+/].tr('_-', ' ')
 
-		-doc = Oga.parse_xml(IO.read(c.file.path))
-		-background = doc.at_xpath('//key[text()="background"]').next_element.text
-		-foreground = doc.at_xpath('//key[text()="foreground"]').next_element.text
+		- i += 1
 
-		- i += 2
+		-doc = File.open(c.file.path) {|f| Nokogiri::XML(f)}
+		-background = doc.xpath('//key[contains(text(), "background")]').first.next_element.content
+		-selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
+		-string = doc.xpath('//string[contains(text(), "String")]').first.next_element.next_element.next_element.next_element.last_element_child.content
+		-keyword = doc.xpath('//string[contains(text(), "Keyword")]').first.next_element.next_element.next_element.next_element.last_element_child.content
+		-lNo = doc.xpath('//string[contains(text(), "Comment")]').first.next_element.next_element.next_element.next_element.last_element_child.content
 
 		:scss
-			.win:nth-child(#{i}) {
-				background-color: #{background};
+			.win:nth-of-type(#{i}) {
+				background: #{background};
 
-				.PreProc {
-					color: #{foreground}
+				.String, .StringDelimiter, span[class^="rubyRegex"] {
+					color: #{string};
 				}
-				.String {
-					color: #{foreground}
-				} 
-				.LineNr {
 
+				.PreProc, .rubyClass, .Type {
+					color: #{keyword};
 				}
+
+				.lNo {
+					color: #{lNo};
+				}
+			}
+
+			.win::selection, .win::moz-selection {
+				background: #{selection};
 			}
 
 		.win{:id => name}
@@ -37,7 +46,7 @@
 			- @code.cont.each_line do |line|
 				- l += 1
 				.line
-					%span= l
+					%span.lNo= l
 					%span= line.html_safe
 			- l = 0
 
