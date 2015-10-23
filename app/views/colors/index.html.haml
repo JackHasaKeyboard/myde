@@ -14,22 +14,22 @@
 		-selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
 		-string = doc.xpath('//string[contains(text(), "String")]').first.next_element.next_element.next_element.next_element.last_element_child.content
 		-keyword = doc.xpath('//string[contains(text(), "Keyword")]').first.next_element.next_element.next_element.next_element.last_element_child.content
-		-lNo = doc.xpath('//string[contains(text(), "Comment")]').first.next_element.next_element.next_element.next_element.last_element_child.content
+		-l_no = doc.xpath('//string[contains(text(), "Comment")]').first.next_element.next_element.next_element.next_element.last_element_child.content
 
 		:scss
 			.win:nth-of-type(#{i}) {
 				background: #{background};
-
+				
 				.String, .StringDelimiter, span[class^="rubyRegex"] {
 					color: #{string};
 				}
 
-				.PreProc, .rubyClass, .Type {
+				.PreProc, .rubyClass {
 					color: #{keyword};
 				}
 
 				.lNo {
-					color: #{lNo};
+					color: #{l_no};
 				}
 			}
 
