@@ -113,8 +113,6 @@
  	}
 
  	.line {
- 		padding: 10px;
-
  		span {
  			white-space: pre-wrap;
  			display: inline-block;
@@ -133,6 +131,10 @@
  		color: #fff;
  		padding: 10px;
  		border-radius: 0px 6px 0px 0px;
+ 	}
+
+ 	.l_no {
+ 		padding: 10px;
  	}
 
  	.head, .foot *, .l_no {
