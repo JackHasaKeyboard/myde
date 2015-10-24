@@ -96,7 +96,7 @@
  	}
 
  	span, li {
- 		display: inline-block;
+ 		display: block;
  		margin: 0;
  	}
 
@@ -114,13 +114,10 @@
 
  	.line {
  		padding: 10px;
- 		/* span, li {
- 			padding-top: 2px;
- 			padding-bottom: 2px;
- 		} */
 
- 		li {
+ 		span {
  			white-space: pre-wrap;
+ 			display: inline-block;
  		}
  	}
 
@@ -138,7 +135,7 @@
  		border-radius: 0px 6px 0px 0px;
  	}
 
- 	.head, .foot *, .lNo {
+ 	.head, .foot *, .l_no {
  		-webkit-user-select: none;
  		-khtml-user-select: none;
  		-moz-user-select: none;
@@ -188,5 +185,6 @@
  		padding: 0;
  		margin: 0;
  		cursor: pointer;
+ 		float: left;
  	}
  }
