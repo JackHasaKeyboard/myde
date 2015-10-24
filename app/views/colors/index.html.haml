@@ -11,25 +11,33 @@
 
 		-doc = File.open(c.file.path) {|f| Nokogiri::XML(f)}
 		-background = doc.xpath('//key[contains(text(), "background")]').first.next_element.content
+		-foreground = doc.xpath('//key[contains(text(), "foreground")]').first.next_element.content
 		-selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
-		-string = doc.xpath('//string[contains(text(), "String")]').first.next_element.next_element.next_element.next_element.last_element_child.content
-		-keyword = doc.xpath('//string[contains(text(), "Keyword")]').first.next_element.next_element.next_element.next_element.last_element_child.content
-		-l_no = doc.xpath('//string[contains(text(), "Comment")]').first.next_element.next_element.next_element.next_element.last_element_child.content
+		-string = doc.xpath('//string[contains(text(), "String")]').first.parent.last_element_child.last_element_child.content
+		-keyword = doc.xpath('//string[contains(text(), "Keyword")]').first.parent.last_element_child.last_element_child.content
+		-l_no = doc.xpath('//string[contains(text(), "Comment")]').first.parent.last_element_child.last_element_child.content
 
 		:scss
 			.win:nth-of-type(#{i}) {
 				background: #{background};
-				
+
 				.String, .StringDelimiter, span[class^="rubyRegex"] {
 					color: #{string};
+				}
+
+				.StringDelimiter {
 				}
 
 				.PreProc, .rubyClass {
 					color: #{keyword};
 				}
 
-				.lNo {
+				.l_no {
 					color: #{l_no};
+				}
+
+				.Type {
+					color: #{foreground}
 				}
 			}
 
@@ -46,7 +54,7 @@
 			- @code.cont.each_line do |line|
 				- l += 1
 				.line
-					%span.lNo= l
+					%span.l_no= l
 					%span= line.html_safe
 			- l = 0
 
