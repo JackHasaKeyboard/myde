@@ -9,85 +9,58 @@
         - i += 1
 
         -doc = File.open(c.file.path) {|f| Nokogiri::XML(f)}
-        -background = doc.xpath('//key[contains(text(), "background")]').first.next_element.content
 
+        -dicts = ['string', 'keyword', 'storage', 'string.regexp', 'comment']
+
+        -dicts.each do |dict|
+            -if doc.at_css("*:contains('#{dict}')")
+                -hex = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.last_element_child.content
+
+                :scss
+                    .win:nth-of-type(#{i}) {
+                        .#{dict} {
+                                color: #{hex};
+                            }
+                    }
+
+        -sibs = ['caret']
+
+        -sibs.each do |sib|
+            -if doc.at_css("*:contains('#{sib}')")
+                -hex = doc.xpath("//key[contains(text(), '#{sib}')]").first.next_element.content
+            
+                :scss
+                    .win:nth-of-type(#{i}) {
+                        .#{sib} {
+                                color: #{sib};
+                            }
+                    }
+
+        -if doc.at_css("*:contains('background')")
+            -background = doc.xpath("//key[contains(text(), 'background')]").first.next_element.content
+
+            :scss
+                .win:nth-of-type(#{i}) {
+                    background-color: #{background};
+                }
+
+        -if doc.at_css("*:contains('selection')")
+            -selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
+
+            :scss
+                .win:nth-of-type(#{i}) {
+                    ::selection, ::moz-selection {
+                        background-color: #{selection};
+                    }
+                }
+        
         -if doc.at_css("*:contains('foreground')")
             -foreground = doc.xpath('//key[contains(text(), "foreground")]').first.next_element.content
 
-        -selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
-        -string = doc.xpath('//string[contains(text(), "String")]').first.parent.last_element_child.last_element_child.content
-        -keyword = doc.xpath('//string[contains(text(), "Keyword")]').first.parent.last_element_child.last_element_child.content
-        -l_no = doc.xpath('//string[contains(text(), "Comment")]').first.parent.last_element_child.last_element_child.content
-        -if doc.at_css("*:contains('keyword')")
-            -operator = doc.xpath('//string[contains(text(), "keyword")]').first.parent.last_element_child.last_element_child.content
-
             :scss
                 .win:nth-of-type(#{i}) {
-                    .Operator {
-                        color: #{operator};
-                    }
-                }
-        
-        -if doc.at_css("*:contains('storage')")
-            -storage = doc.xpath('//string[contains(text(), "storage")]').first.parent.last_element_child.last_element_child.content
-        
-            :scss
-                .win:nth-of-type(#{i}) {
-                    .storage {
-                        color: #{storage};
-                    }
-                }
-
-        -if doc.at_css("*:contains('string.regexp')")
-            -regex = doc.xpath('//string[contains(text(), "string.regexp")]').first.parent.last_element_child.last_element_child.content
-
-            :scss
-                .win:nth-of-type(#{i}) {
-                    span[class^="rubyRegexp"] {
-                            color: #{regex};
-                        }
-                }
-        
-        -if doc.at_css("*:contains('caret')")
-            -caret = doc.xpath('//key[contains(text(), "caret")]').first.next_element.content
-
-            :scss
-                .win:nth-of-type(#{i}) {
-                    .StringDelimiter {
-                        color: #{caret};
-                    }
-                }
-
-        :scss
-            .win:nth-of-type(#{i}) {
-                background: #{background};
-                color: #{foreground};
-                
-                ::selection:not(.foot) {
-                    background: #{selection};
-                }
-
-                .String, .StringDelimiter {
-                    color: #{string};
-                }
-
-                .l_no {
-                    color: #{l_no};
-                }
-
-                .Type {
                     color: #{foreground};
                 }
-
-                span:not([class]) {
-                    #color: #{keyword};
-                }
-
-            }
-
-            .win::selection, .win::moz-selection {
-                background: #{selection};
-            }
 
         .win{:id => name}
             .head
@@ -98,7 +71,7 @@
             - @code.cont.each_line do |line|
                 - l += 1
                 .line
-                    %span.l_no= l
+                    %span.l_no.comment= l
                     %span= line.html_safe
             - l = 0
 
