@@ -10,16 +10,27 @@
 
         -doc = File.open(c.file.path) {|f| Nokogiri::XML(f)}
 
-        -dicts = ['string', 'keyword', 'storage', 'string.regexp', 'comment']
+        -dicts = ['string', 'keyword', 'storage', 'regexp', 'comment', 'operator']
 
         -dicts.each do |dict|
             -if doc.at_css("*:contains('#{dict}')")
-                -hex = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.last_element_child.content
+                -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.last_element_child.content
+                
+                -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.xpath("//key[contains(text(), background)]").next_element_child.content
+                =bg
+                -if bg.include? "#"
+
+                    :scss
+                        .win:nth-of-type(#{i}) {
+                            .#{dict} {
+                                    background: #{bg};
+                                }
+                        }
 
                 :scss
                     .win:nth-of-type(#{i}) {
                         .#{dict} {
-                                color: #{hex};
+                                color: #{fg};
                             }
                     }
 
@@ -32,7 +43,7 @@
                 :scss
                     .win:nth-of-type(#{i}) {
                         .#{sib} {
-                                color: #{sib};
+                                color: #{hex};
                             }
                     }
 
@@ -41,7 +52,7 @@
 
             :scss
                 .win:nth-of-type(#{i}) {
-                    background-color: #{background};
+                    background: #{background};
                 }
 
         -if doc.at_css("*:contains('selection')")
@@ -50,7 +61,7 @@
             :scss
                 .win:nth-of-type(#{i}) {
                     ::selection, ::moz-selection {
-                        background-color: #{selection};
+                        background: #{selection};
                     }
                 }
         
