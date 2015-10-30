@@ -16,7 +16,6 @@
             -if doc.at_css("string:contains('#{dict}')")
                 -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('foreground')").next_element.content
             
-
                 :scss
                     .win:nth-of-type(#{i}) {
                         .#{dict} {
@@ -26,7 +25,6 @@
 
                 -if doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')")
                     -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('background')").next_element.content
-                    =bg
 
                     :scss
                         .win:nth-of-type(#{i}) {
@@ -58,13 +56,25 @@
 
         -if doc.at_css(":contains('selection')")
             -selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
+            
+            -if selection.length > 7
+                -hex = selection[0..6]
+                -opac = selection[1, 2].to_f / 100
 
-            :scss
-                .win:nth-of-type(#{i}) {
-                    ::selection, ::moz-selection {
-                        background: #{selection};
+                :scss
+                    .win:nth-of-type(#{i}) {
+                        ::selection {
+                            background: #{hex};
+                            opacity: #{opac};
+                        }
                     }
-                }
+            -else
+                :scss
+                    .win:nth-of-type(#{i}) {
+                        ::selection {
+                            background: #{selection};
+                        }
+                    }
         
         -if doc.at_css(":contains('foreground')")
             -foreground = doc.xpath('//key[contains(text(), "foreground")]').first.next_element.content
