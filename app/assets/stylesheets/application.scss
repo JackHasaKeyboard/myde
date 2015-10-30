@@ -20,7 +20,7 @@
  	font-family: Source Code Pro;
  }
 
- body {
+ html, body {
  	margin: 0;
  }
 
@@ -43,15 +43,13 @@
 
  	* {
  		display: inline-block;
- 		padding: 5px;
  		margin: 10px;
  	}
 
  	h3 {
- 		padding: 12px;
+ 		padding: 8px;
  		color: #2f2f2f;
  	}
-
  }
 
  .win {
@@ -105,9 +103,20 @@
 
  	.line {
  		span {
- 			/* padding-top: 0;
- 			padding-bottom: 0; */
  			white-space: pre;
+ 		}
+
+ 		:not(.l_no) {
+ 			border-radius: 3px;
+ 		}
+
+ 		.l_no {
+ 			padding: 10px;
+ 			-webkit-user-select: none;
+ 			-khtml-user-select: none;
+ 			-moz-user-select: none;
+ 			-o-user-select: none;
+ 			user-select: none;
  			display: inline-block;
  		}
  	}
@@ -123,14 +132,9 @@
  		display: inline-block;
  		color: #fff;
  		padding: 10px;
- 		border-radius: 0px 6px 0px 0px;
  	}
 
- 	.l_no {
- 		padding: 10px;
- 	}
-
- 	.head, .foot *, .l_no {
+ 	.head, .foot * {
  		-webkit-user-select: none;
  		-khtml-user-select: none;
  		-moz-user-select: none;
@@ -174,6 +178,7 @@
 
  	#submit {
  		padding: 12px;
+ 		display: none;
  	}
 
  	* {
@@ -189,6 +194,7 @@
 
  	a {
  		display: inline-block;
+ 		cursor: pointer;
  		padding: 6px;
  		width: 20px;
  		text-align: center;
