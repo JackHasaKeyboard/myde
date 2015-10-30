@@ -13,19 +13,9 @@
         -dicts = ['string', 'keyword', 'storage', 'regexp', 'comment', 'operator']
 
         -dicts.each do |dict|
-            -if doc.at_css("*:contains('#{dict}')")
-                -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.last_element_child.content
-                
-                -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.last_element_child.xpath("//key[contains(text(), background)]").next_element_child.content
-                =bg
-                -if bg.include? "#"
-
-                    :scss
-                        .win:nth-of-type(#{i}) {
-                            .#{dict} {
-                                    background: #{bg};
-                                }
-                        }
+            -if doc.at_css("string:contains('#{dict}')")
+                -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('foreground')").next_element.content
+            
 
                 :scss
                     .win:nth-of-type(#{i}) {
@@ -34,10 +24,21 @@
                             }
                     }
 
+                -if doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')")
+                    -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('background')").next_element.content
+                    =bg
+
+                    :scss
+                        .win:nth-of-type(#{i}) {
+                            .#{dict} {
+                                    background: #{bg};
+                                }
+                        }
+
         -sibs = ['caret']
 
         -sibs.each do |sib|
-            -if doc.at_css("*:contains('#{sib}')")
+            -if doc.at_css(":contains('#{sib}')")
                 -hex = doc.xpath("//key[contains(text(), '#{sib}')]").first.next_element.content
             
                 :scss
@@ -47,7 +48,7 @@
                             }
                     }
 
-        -if doc.at_css("*:contains('background')")
+        -if doc.at_css(":contains('background')")
             -background = doc.xpath("//key[contains(text(), 'background')]").first.next_element.content
 
             :scss
@@ -55,7 +56,7 @@
                     background: #{background};
                 }
 
-        -if doc.at_css("*:contains('selection')")
+        -if doc.at_css(":contains('selection')")
             -selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
 
             :scss
@@ -65,7 +66,7 @@
                     }
                 }
         
-        -if doc.at_css("*:contains('foreground')")
+        -if doc.at_css(":contains('foreground')")
             -foreground = doc.xpath('//key[contains(text(), "foreground")]').first.next_element.content
 
             :scss
