@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: testapp_development
+  database: myde_development
   
 test:
   <<: *default
-  database: testapp_test
+  database: myde_test
 
 production:
   <<: *default
