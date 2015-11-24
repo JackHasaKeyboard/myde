@@ -13,6 +13,6 @@ test:
 
 production:
   <<: *default
-  database: dfj1cpd8l46e8g
-  username: okcddhixelzrja
-  password: po5JuNBe5twG0SK75H05SClGHM
+  database: rails_project_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
