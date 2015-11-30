@@ -6,8 +6,6 @@ class ColorsController < ApplicationController
 		@code = Code.first
 
 		@color = Color.new
-
-		require 'open-uri'
 	end
 
 	def create
