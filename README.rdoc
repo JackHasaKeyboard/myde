@@ -1,28 +1,8 @@
-== README
+An online repository of color schemes for text-editors rendered in HTML, right now it just supports Sublime Text themes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Because themes for Sublime Text (.tmTheme, .stTheme) are structured just like HTML, the files are parsed and subsequently rendered using an XML parser called Nokogiri. Intances of strings (scopes) are searched for within the document based on a code snippet provided and then rendered in CSS relative to each record.
 
-Things you may want to cover:
+This is an introduction to a few different things for me and it might be a while before this is a completed idea, but it kinda-sorta works. 
+The biggest hangup is figuring out how to dynamically generate markup based on the code provided, it's for this reason that the way the files are rendered are inconsistant: All files are different and some may decide that a piece of code deserves one styling while another decides that it deserves 10 that all over-ride eachother. As soon as I figure out the logistics of how this works I can begin working on it.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If you'd like to see a better, working, dynamic example of what I'm trying to accomplish then feel free to visit tmtheme-editor: http://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai
