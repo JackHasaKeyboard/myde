@@ -1,22 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
 $light: #fff;
+$light_shadow: #d0d0d0;
 $dark: #2f2f2f;
+$dark_shadow: #000;
+
 * {
     font-family: Source Code Pro;
 }
+
 html, body {
     margin: 0;
 }
+
 body {
     background: $light;
 }
+
 a {
     text-decoration: none;
 }
+
 *[id^="cont"] {
     padding: 16px;
     display: inline-block;
 }
+
+.win, #header {
+    box-shadow: 0 0 2px 0 $light_shadow;
+}
+
 #header {
     display: block;
     -webkit-user-select: none;
@@ -24,60 +37,76 @@ a {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+
     * {
         display: inline-block;
         margin: 10px;
         color: $dark;
     }
+
     h3 {
         padding: 8px;
     }
 }
+
 .win {
     display: inline-block;
     border-radius: 6px;
     float: left;
+
     .head, .foot {
         background-color: $dark;
+
         img, a {
             cursor: pointer;
         }
     }
+
     .head {
         border-radius: 6px 6px 0px 0px;
+
         img {
             float: right;
         }
     }
+
     .foot {
         border-radius: 0px 0px 6px 6px;
         overflow: auto;
+
         * {
             color: $light;
             float: left;
         }
+
         span {
             padding-left: 10px;
             padding-right: 10px;
         }
     }
+
     img {
         height: 20px;
         padding: 10px;
     }
+
     li {
         padding: 10px;
     }
+
     code {
         padding: 10px 10px 10px 0;
     }
+
     .line {
         span {
             white-space: pre;
         }
+
         :not(.l_no) {
             border-radius: 3px;
         }
+
         .l_no {
             padding: 10px;
             -webkit-user-select: none;
@@ -88,17 +117,20 @@ a {
             display: inline-block;
         }
     }
+
     .name {
         display: inline-block;
         border-radius: 6px 0px 0px 0px;
         color: $light;
         height: 20px;
     }
+
     a {
         display: inline-block;
         color: $dark;
         padding: 10px;
     }
+
     .head, .foot * {
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -107,14 +139,17 @@ a {
         user-select: none;
     }
 }
+
 input[type="submit"] {
     border-radius: 6px;
     background-color: $dark;
     border: 0;
 }
+
 .win, input {
     margin: 16px;
 }
+
 #upload {
     background-color: $dark;
     border-radius: 6px;
@@ -125,18 +160,22 @@ input[type="submit"] {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+
     label {
         display: inline-block;
         color: $light;
         cursor: pointer;
         padding: 10px;
     }
+
     input[type="text"], label.file, span.icon-span-filestyle {
         display: none;
     }
+
     #submit {
         padding: 12px;
     }
+
     * {
         padding: 0;
         margin: 0;
