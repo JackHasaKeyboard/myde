@@ -103,10 +103,6 @@ a {
             white-space: pre;
         }
 
-        :not(.l_no) {
-            border-radius: 3px;
-        }
-
         .l_no {
             padding: 10px;
             -webkit-user-select: none;
@@ -174,6 +170,7 @@ input[type="submit"] {
 
     #submit {
         padding: 12px;
+        display: none;
     }
 
     * {
