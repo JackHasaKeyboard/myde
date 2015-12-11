@@ -22,13 +22,14 @@ $(document).ready(function(){
     $('.buttonText').text($(this).val().split('fakepath\\')[1]);
   });
 
-  /* $('#new_color').bind('change click', function() {
+  $('#new_color').bind('change click', function() {
     if($(this).validate().checkForm()) {
       $('#submit').removeClass('button_disabled').attr('disabled', false);
+      $('#submit').show();
     } else {
       $('#submit').addClass('button_disabled').attr('disabled', true);
       $('#submit').hide();
     }
-  }); */
+  });
 
 });

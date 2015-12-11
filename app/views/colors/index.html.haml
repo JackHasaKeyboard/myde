@@ -51,7 +51,9 @@
 
             :scss
                 .win:nth-of-type(#{i}) {
-                    background: #{background};
+                    .line {
+                        background: #{background};
+                    }
                 }
 
         -if doc.at_css(":contains('selection')")
