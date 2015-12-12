@@ -5,6 +5,9 @@ $light_shadow: #d0d0d0;
 $dark: #2f2f2f;
 $dark_shadow: #000;
 
+$bg: $light;
+$fg: $dark;
+
 * {
     font-family: Source Code Pro;
 }
@@ -14,7 +17,7 @@ html, body {
 }
 
 body {
-    background: $light;
+    background: $bg;
 }
 
 a {
@@ -41,11 +44,11 @@ a {
     * {
         display: inline-block;
         margin: 10px;
-        color: $dark;
     }
 
     h3 {
         padding: 8px;
+        color: $fg;
     }
 }
 
