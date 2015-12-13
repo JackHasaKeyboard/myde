@@ -3,9 +3,9 @@ class ColorsController < ApplicationController
 
 	def index
 		@colors = Color.all.order("file_file_name ASC")
-		@code = Code.first
-
 		@color = Color.new
+
+		@code = Code.first
 	end
 
 	def create

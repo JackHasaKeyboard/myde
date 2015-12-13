@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'paperclip', '~> 4.3.1'
 gem 'haml', '~> 4.0.7'
 gem 'simple_form', '~> 3.2.0'
-gem 'aws-sdk'
 
 gem 'rails', '4.2.4'
 gem 'pg'
