@@ -1,14 +1,11 @@
-#header
-    %h3 MyDE
-    = render 'form'
-
 - i = 0
+- colors = Dir.glob('app/assets/colors/*')
 %div{:id => "cont#{i}"}
-    - @colors.each do |c|
-        -name = c.file_file_name[/[^.]+/].tr('_-', ' ')
+    - colors.each do |c|
+        -name = c[/[^.]+/].tr('_-', '').gsub /.*\//, ''
         - i += 1
 
-        -doc = File.open(c.file.path) {|f| Nokogiri::XML(f)}
+        -doc = File.open(c) {|f| Nokogiri::XML(f)}
 
         -dicts = ['string', 'keyword', 'storage', 'regexp', 'comment', 'operator']
 
@@ -22,7 +19,6 @@
                                 color: #{fg};
                             }
                     }
-
                 -if doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')")
                     -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('background')").next_element.content
 
@@ -32,7 +28,6 @@
                                     background: #{bg};
                                 }
                         }
-
         -sibs = ['caret']
 
         -sibs.each do |sib|
@@ -45,7 +40,6 @@
                                 color: #{hex};
                             }
                     }
-
         -if doc.at_css(":contains('background')")
             -background = doc.xpath("//key[contains(text(), 'background')]").first.next_element.content
 
@@ -55,7 +49,6 @@
                         background: #{background};
                     }
                 }
-
         -if doc.at_css(":contains('selection')")
             -selection = doc.xpath('//key[contains(text(), "selection")]').first.next_element.content
             
@@ -85,7 +78,6 @@
                 .win:nth-of-type(#{i}) {
                     color: #{foreground};
                 }
-
         .win{:id => name}
             .head
                 %li.name= name
@@ -100,5 +92,5 @@
             - l = 0
 
             .foot
-                %a{:href => c.file, :download => "#{name}.tmTheme", :target => "blank"} &#8595
-                = image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/MyDe/#{c.file_file_name}.git"
+                %a{:href => c, :download => "#{name}.tmTheme", :target => "blank"} &#8595
+                = image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/MyDe/#{c}.git"
