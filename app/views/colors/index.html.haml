@@ -1,5 +1,5 @@
 - i = 0
-- colors = Dir.glob('app/assets/colors/*')
+- colors = Dir.glob('app/assets/colors/*').sort
 %div{:id => "cont#{i}"}
     - colors.each do |c|
         -name = c[/[^.]+/].tr('_-', '').gsub /.*\//, ''
