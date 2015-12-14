@@ -1,0 +1,5 @@
+<code><span>require </span><span class="string"><span class="punctuation">\'</span><span>active_support</span><span class="punctuation">\'</span></span></code>
+<code></code>
+<code><span class="rubyClass">module</span> <span class="type">MyDE</span></code>
+<code><span class="storage">  class</span> <span class="type">RubyExample</span></code>
+<code><span class="type">    CONSTANT</span><span class="keyword operator"> = </span><span class="regexp string"><span class="string">/</span><span>^</span><span>[</span><span>0-9</span><span>]</span><span>+</span><span> regex string</span><span>$</span><span class="string">/</span></span></code>
