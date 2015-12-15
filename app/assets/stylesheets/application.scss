@@ -20,12 +20,10 @@ body {
     background: $bg;
 }
 
-a {
-    text-decoration: none;
-}
-
 *[id^="cont"] {
     padding: 16px;
+    min-width: 466px;
+    display: inline-block;
 }
 
 .win, #header {
