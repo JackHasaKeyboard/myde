@@ -92,5 +92,5 @@
             - l = 0
 
             .foot
-                %a{href: "assets/#{name}.tmTheme", download: "#{name}.tmTheme", target: "blank"} &#8595
-                = image_tag "icon/git.svg", :class => "git_clone", :title => "git clone git://github.com/MyDe/#{c}.git"
+                %a{href: c, download: "#{name}.tmTheme", target: "blank"} &#8595
+                = link_to image_tag("icon/git.svg"), "https://github.com/JackHasaKeyboard/myde/blob/color-asset/app/assets/colors/#{name}.tmTheme", class: "git_clone"

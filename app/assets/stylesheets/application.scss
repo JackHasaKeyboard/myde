@@ -26,7 +26,6 @@ a {
 
 *[id^="cont"] {
     padding: 16px;
-    display: inline-block;
 }
 
 .win, #header {
@@ -80,6 +79,10 @@ a {
         * {
             color: $light;
             float: left;
+        }
+
+        .git_clone {
+            padding: 0;
         }
 
         span {
