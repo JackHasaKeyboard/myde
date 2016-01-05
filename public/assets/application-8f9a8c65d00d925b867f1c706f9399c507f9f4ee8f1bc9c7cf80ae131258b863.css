@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+/* line 11, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+* {
+  font-family: Source Code Pro;
+}
+
+/* line 15, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 19, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+html, body {
+  margin: 0;
+}
+
+/* line 23, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+body {
+  background: #2f2f2f;
+}
+
+/* line 27, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+*[id^="cont"] {
+  padding: 16px;
+  min-width: 466px;
+  display: inline-block;
+}
+
+/* line 33, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win, #header {
+  box-shadow: 0 0 2px 0 #000;
+}
+
+/* line 37, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#header {
+  display: block;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+/* line 45, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#header * {
+  display: inline-block;
+  margin: 10px;
+}
+/* line 50, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#header h3 {
+  padding: 8px;
+  color: #fff;
+}
+
+/* line 56, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win {
+  display: inline-block;
+  border-radius: 6px;
+  float: left;
+}
+/* line 61, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .head, .win .foot {
+  background-color: #2f2f2f;
+}
+/* line 64, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .head img, .win .head a, .win .foot img, .win .foot a {
+  cursor: pointer;
+}
+/* line 69, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .head {
+  border-radius: 6px 6px 0px 0px;
+}
+/* line 72, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .head img {
+  float: right;
+}
+/* line 77, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .foot {
+  border-radius: 0px 0px 6px 6px;
+  overflow: auto;
+}
+/* line 81, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .foot * {
+  color: #fff;
+  float: left;
+}
+/* line 86, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .foot .git_clone {
+  padding: 0;
+  font-weight: bold;
+}
+/* line 91, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .foot span {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 97, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win img {
+  height: 20px;
+  padding: 10px;
+}
+/* line 102, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win li {
+  padding: 10px;
+}
+/* line 106, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win code {
+  padding: 10px 10px 10px 0;
+}
+/* line 111, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .line span {
+  white-space: pre;
+}
+/* line 115, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .line .l_no {
+  padding: 10px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+/* line 126, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .name {
+  display: inline-block;
+  border-radius: 6px 0px 0px 0px;
+  color: #fff;
+  height: 20px;
+}
+/* line 133, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win a {
+  display: inline-block;
+  color: #2f2f2f;
+  padding: 10px;
+}
+/* line 139, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win .head, .win .foot * {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* line 148, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+input[type="submit"] {
+  border-radius: 6px;
+  background-color: #2f2f2f;
+  border: 0;
+}
+
+/* line 154, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+.win, input {
+  margin: 16px;
+}
+
+/* line 158, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#upload {
+  background-color: #2f2f2f;
+  border-radius: 6px;
+  float: right;
+  padding: 0;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+/* line 169, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#upload label {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+/* line 176, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#upload input[type="text"], #upload label.file, #upload span.icon-span-filestyle {
+  display: none;
+}
+/* line 180, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#upload #submit {
+  padding: 12px;
+  display: none;
+}
+/* line 185, /Users/Jack/RoR/myde/app/assets/stylesheets/application.scss */
+#upload * {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  float: left;
+  color: #fff;
+}

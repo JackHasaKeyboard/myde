@@ -1,6 +1,6 @@
 - i = 0
 - colors = Dir.glob('app/assets/colors/*').sort
-%div{:id => "cont#{i}"}
+%div{id: "cont#{i}"}
     - colors.each do |c|
         -name = c[/[^.]+/].tr('_-', '').gsub /.*\//, ''
         - i += 1
@@ -11,23 +11,28 @@
 
         -dicts.each do |dict|
             -if doc.at_css("string:contains('#{dict}')")
-                -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('foreground')").next_element.content
-            
-                :scss
-                    .win:nth-of-type(#{i}) {
-                        .#{dict} {
-                                color: #{fg};
-                            }
-                    }
-                -if doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')")
-                    -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('background')").next_element.content
-
+                -unless doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('foreground')").next_element.content.length < 7
+                    -fg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('foreground')").next_element.content
+                
                     :scss
                         .win:nth-of-type(#{i}) {
                             .#{dict} {
-                                    background: #{bg};
+                                    color: #{fg};
                                 }
                         }
+
+                -if doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')")
+                    -unless doc.at_css("string:contains('#{dict}')").parent.at_css("dict").at_css(":contains('background')").next_element.content.length < 7
+
+                        -bg = doc.xpath("//string[contains(text(), '#{dict}')]").first.parent.at_css("dict").at_css(":contains('background')").next_element.content
+
+                        :scss
+                            .win:nth-of-type(#{i}) {
+                                .#{dict} {
+                                        background: #{bg};
+                                    }
+                            }
+
         -sibs = ['caret']
 
         -sibs.each do |sib|
@@ -78,10 +83,10 @@
                 .win:nth-of-type(#{i}) {
                     color: #{foreground};
                 }
-        .win{:id => name}
+        .win{id:  name}
             .head
                 %li.name= name
-                = image_tag "icon/sublimetext_logo.png", :id => "sublimetext_logo"
+                = image_tag "icon/sublimetext_logo.png", id: "sublimetext_logo"
 
             - l = 0
             - @code.cont.each_line do |line|
